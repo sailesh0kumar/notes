@@ -46,7 +46,7 @@ app.get("/notes", async (req, res) => {
         res.status(500).json({ status: "Error fetching notes", error: error.message });
     }
 });
-
-app.listen(5000, () => {
-    console.log("Server is online on port 5000");
+const PORT = process.env.port || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is online on port 5000 ${PORT}`);
 });
